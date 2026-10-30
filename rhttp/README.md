@@ -102,6 +102,28 @@ dependencies:
   rhttp: <version>
 ```
 
+#### iOS and macOS: Swift Package Manager or CocoaPods
+
+Flutter 3.44+ uses [Swift Package Manager](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers) for Apple plugins when enabled (default on recent Flutter versions).
+
+| Integration | How the Rust library is built |
+|-------------|--------------------------------|
+| **Swift Package Manager** | Prebuilt `rhttp.xcframework` in the plugin (no Rust toolchain required on your machine) |
+| **CocoaPods** | Compiled from source during the app build via [cargokit](https://github.com/irondash/cargokit) (Rust required) |
+
+Both paths produce the same library. To keep building from source, disable SwiftPM for your app:
+
+```yaml
+flutter:
+  disable-swift-package-manager: true
+```
+
+Maintainers: regenerate Apple binaries after Rust changes with:
+
+```sh
+./scripts/build_darwin_xcframework.sh
+```
+
 ### ➤ Initialization
 
 ```dart

@@ -1,3 +1,8 @@
+## 0.16.1
+
+- feat: add Swift Package Manager support on iOS and macOS via prebuilt XCFrameworks
+- docs: document SPM vs CocoaPods integration for Apple platforms
+
 ## 0.16.0
 
 - deps: bump `flutter_rust_bridge` to `2.12.0`
